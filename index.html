@@ -1,97 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub Issues Tracker</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
-<!-- LOGIN -->
-<div class="login-container" id="loginContainer">
+    <div id="login-page">
+        <div class="login-box">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="60">
+            <h2>GitHub Issues Tracker</h2>
+            <p>Sign in to manage your issues</p>
+            <input type="text" id="user-input" placeholder="Username (admin)">
+            <input type="password" id="pass-input" placeholder="Password (admin123)">
+            <button id="login-btn">Sign In</button>
+            <p style="font-size: 12px; color: #666; margin-top: 15px;">Default: admin | admin123</p>
+        </div>
+    </div>
 
-<div class="login-card">
+    <div id="dashboard" class="hide">
+        <header class="navbar">
+            <div class="nav-left">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="30">
+                <span><b>GitHub Issues Tracker</b></span>
+            </div>
+            <div class="nav-right">
+                <input type="text" id="search-box" placeholder="Search issues...">
+                <button class="new-issue-btn">+ New Issue</button>
+            </div>
+        </header>
 
-<h2>GitHub Issues Tracker</h2>
+        <div class="main-container">
+            <div class="tab-section">
+                <button class="tab-btn active" onclick="filterData('all')">All</button>
+                <button class="tab-btn" onclick="filterData('open')">Open</button>
+                <button class="tab-btn" onclick="filterData('closed')">Closed</button>
+            </div>
 
-<input type="text" id="username" placeholder="Username">
+            <div class="issue-header">
+                <h3 id="issue-count">0 Issues</h3>
+                <p>Track and manage your project issues</p>
+            </div>
 
-<input type="password" id="password" placeholder="Password">
+            <div id="issue-list" class="grid"></div>
+        </div>
+    </div>
 
-<button id="loginBtn">Sign In</button>
+    <div id="issue-popup" class="popup hide">
+        <div class="popup-content">
+            <h2 id="modal-title">Issue Title</h2>
+            <div class="modal-meta">
+                <span id="modal-status" class="status-label">Opened</span>
+                <span id="modal-author-info">Opened by Fahim Ahmed • 22/02/2026</span>
+            </div>
+            
+            <p id="modal-desc" class="modal-description">Description text goes here...</p>
+            
+            <div class="details-box">
+                <div class="detail-item">
+                    <small>Assignee:</small>
+                    <p id="modal-assignee"><b>Fahim Ahmed</b></p>
+                </div>
+                <div class="detail-item">
+                    <small>Priority:</small>
+                    <p id="modal-priority" class="priority-high">HIGH</p>
+                </div>
+            </div>
+            
+            <button id="close-popup-btn" class="close-btn">Close</button>
+        </div>
+    </div>
 
-<p class="demo">Demo: admin / admin123</p>
-
-</div>
-
-</div>
-
-
-<!-- DASHBOARD -->
-<div class="dashboard hidden" id="dashboard">
-
-<header class="header">
-
-<h2>GitHub Issues Tracker</h2>
-
-<div class="search-area">
-
-<input type="text" id="searchInput" placeholder="Search issues...">
-
-<button id="searchBtn">Search</button>
-
-</div>
-
-</header>
-
-
-<div class="tabs">
-
-<button class="tab active" data-type="all">All</button>
-
-<button class="tab" data-type="open">Open</button>
-
-<button class="tab" data-type="closed">Closed</button>
-
-</div>
-
-
-<div class="issues-container" id="issuesContainer">
-
-</div>
-
-</div>
-
-
-<!-- POPUP -->
-<div class="popup hidden" id="popup">
-
-<div class="popup-content">
-
-<span class="close" id="closePopup">×</span>
-
-<h3 id="popupTitle"></h3>
-
-<p id="popupDesc"></p>
-
-<p><b>Status:</b> <span id="popupStatus"></span></p>
-
-<p><b>Priority:</b> <span id="popupPriority"></span></p>
-
-<p><b>Author:</b> <span id="popupAuthor"></span></p>
-
-<p><b>Created:</b> <span id="popupCreated"></span></p>
-
-<p><b>Updated:</b> <span id="popupUpdated"></span></p>
-
-</div>
-
-</div>
-
-
-<script src="script.js"></script>
-
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f6f8fa; margin: 0; }
+.hide { display: none !important; }
+
+/* Login Styles */
+#login-page { display: flex; justify-content: center; align-items: center; height: 100vh; }
+.login-box { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; width: 350px; border: 1px solid #ddd; }
+.login-box input { width: 90%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 6px; }
+.login-box button { width: 98%; padding: 12px; background-color: #5833ff; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+
+/* Navbar */
+.navbar { background: white; padding: 10px 50px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e1e4e8; }
+#search-box { padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 6px; }
+.new-issue-btn { background: #5833ff; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; }
+
+/* Main Content */
+.main-container { padding: 30px 50px; }
+.tab-section { margin-bottom: 20px; }
+.tab-btn { padding: 10px 30px; margin-right: 10px; border: 1px solid #ddd; background: white; border-radius: 6px; cursor: pointer; }
+.tab-btn.active { background: #5833ff; color: white; border-color: #5833ff; }
+
+/* Grid and Cards */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+.card { background: white; border: 1px solid #ddd; border-radius: 10px; padding: 20px; cursor: pointer; transition: 0.3s; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+
+/* Card Status Borders (Image Pattern) */
+.card.open { border-top: 6px solid #28a745; }
+.card.closed { border-top: 6px solid #6f42c1; }
+
+.priority-tag { background: #ffeef0; color: #d73a49; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: bold; float: right; }
+
+/* POPUP SECTION (AS REQUESTED) */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.popup-content { background: white; padding: 35px; border-radius: 15px; width: 90%; max-width: 550px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.status-label { background: #28a745; color: white; padding: 5px 15px; border-radius: 20px; font-size: 12px; margin-right: 10px; }
+.modal-description { color: #555; line-height: 1.6; margin: 20px 0; }
+.details-box { display: flex; justify-content: space-between; background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; }
+.close-btn { width: 100%; padding: 12px; background: #5833ff; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 16px; font-weight: bold; }
