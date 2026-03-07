@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GitHub Issues Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="login-container" id="loginContainer">
+
+<div class="login-card">
+
+<h2>GitHub Issues Tracker</h2>
+
+<input type="text" id="username" placeholder="Username">
+
+<input type="password" id="password" placeholder="Password">
+
+<button id="loginBtn">Sign In</button>
+
+<p class="demo">Demo: admin / admin123</p>
+
+</div>
+
+</div>
+
+
+<!-- DASHBOARD -->
+<div class="dashboard hidden" id="dashboard">
+
+<header class="header">
+
+<h2>GitHub Issues Tracker</h2>
+
+<div class="search-area">
+
+<input type="text" id="searchInput" placeholder="Search issues...">
+
+<button id="searchBtn">Search</button>
+
+</div>
+
+</header>
+
+
+<div class="tabs">
+
+<button class="tab active" data-type="all">All</button>
+
+<button class="tab" data-type="open">Open</button>
+
+<button class="tab" data-type="closed">Closed</button>
+
+</div>
+
+
+<div class="issues-container" id="issuesContainer">
+
+</div>
+
+</div>
+
+
+<!-- POPUP -->
+<div class="popup hidden" id="popup">
+
+<div class="popup-content">
+
+<span class="close" id="closePopup">×</span>
+
+<h3 id="popupTitle"></h3>
+
+<p id="popupDesc"></p>
+
+<p><b>Status:</b> <span id="popupStatus"></span></p>
+
+<p><b>Priority:</b> <span id="popupPriority"></span></p>
+
+<p><b>Author:</b> <span id="popupAuthor"></span></p>
+
+<p><b>Created:</b> <span id="popupCreated"></span></p>
+
+<p><b>Updated:</b> <span id="popupUpdated"></span></p>
+
+</div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
