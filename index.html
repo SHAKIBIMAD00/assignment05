@@ -1,100 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GitHub Issues Tracker</title>
-  <link rel="stylesheet" href="index.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>GitHub Issues Tracker</title>
+<link rel="stylesheet" href="index.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- Hidden icon sources -->
-  <img id="open-icon" src="./assets/Open-Status.png" alt="" style="display:none;">
-  <img id="closed-icon" src="./assets/Closed- Status .png" alt="" style="display:none;">
+<img id="open-icon" src="./assets/Open-Status.png" style="display:none">
+<img id="closed-icon" src="./assets/Closed- Status .png" style="display:none">
 
-  <!-- LOGIN PAGE -->
-  <div id="login-page">
-    <div class="login-box">
-      <img src="./assets/github-logo.png" width="70" alt="Logo" />
-      <h2>GitHub Issues Tracker</h2>
+<!-- LOGIN -->
 
-      <input type="text" placeholder="Username" />
-      <input type="password" placeholder="Password" />
+<div id="login-page">
+<div class="login-box">
+<img src="./assets/github-logo.png" width="70">
+<h2>GitHub Issues Tracker</h2>
 
-      <button id="login-btn">Sign In</button>
-    </div>
-  </div>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
 
-  <!-- DASHBOARD -->
-  <div id="dashboard" class="hide">
-    <header class="navbar">
-      <div class="nav-left">
-        <img src="./assets/github-logo.png" width="34" alt="Logo" />
-        <b>GitHub Issues Tracker</b>
-      </div>
+<button id="login-btn">Sign In</button>
+</div>
+</div>
 
-      <div class="nav-right">
-        <input type="text" id="search-box" placeholder="Search issues..." />
-        <button class="new-btn">+ New Issue</button>
-      </div>
-    </header>
+<!-- DASHBOARD -->
 
-    <div class="main-container">
-      <div class="status-legend">
-        <div class="issue-summary">
-          <div class="issue-summary-icon">
-            <img src="./assets/Aperture.png" alt="Issue Icon" />
-          </div>
-          <div>
-            <div id="issue-count"><b>25 Issues</b></div>
-            <p>Track and manage your project issues</p>
-          </div>
-        </div>
+<div id="dashboard" class="hide">
 
-        <div class="legend-dots">
-          <span><span class="dot-open"></span> Open</span>
-          <span><span class="dot-closed"></span> Closed</span>
-        </div>
-      </div>
+<header class="navbar">
+<div class="nav-left">
+<img src="./assets/github-logo.png" width="34">
+<b>GitHub Issues Tracker</b>
+</div>
 
-      <div id="issue-list" class="grid"></div>
-    </div>
-  </div>
+<div class="nav-right">
+<input type="text" id="search-box" placeholder="Search issues...">
+<button class="new-btn">+ New Issue</button>
+</div>
+</header>
 
-  <!-- POPUP -->
-  <div id="issue-popup" class="popup hide">
-    <div class="popup-content">
-      <div class="popup-top">
-        <h2 id="modal-title"></h2>
-      </div>
+<div class="main-container">
 
-      <div class="modal-meta">
-        <span id="modal-status" class="status-btn-modal"></span>
-        <span id="modal-author-info"></span>
-      </div>
+<!-- FILTER TABS -->
 
-      <div id="modal-tags" class="tag-container popup-tags"></div>
+<div class="filter-tabs">
 
-      <p id="modal-desc"></p>
+<button class="tab-btn active" data-status="all">
+All
+</button>
 
-      <div class="details-box">
-        <div class="detail-item">
-          <span class="detail-label">Assignee:</span>
-          <b id="modal-assignee"></b>
-        </div>
+<button class="tab-btn" data-status="open">
+Open
+</button>
 
-        <div class="detail-item">
-          <span class="detail-label">Priority:</span>
-          <span id="modal-priority" class="priority-pill"></span>
-        </div>
-      </div>
+<button class="tab-btn" data-status="closed">
+Closed
+</button>
 
-      <div class="popup-footer">
-        <button id="close-popup-btn" class="close-btn">Close</button>
-      </div>
-    </div>
-  </div>
+</div>
 
-  <script src="index.js"></script>
+<!-- STATUS SECTION -->
+
+<div class="status-legend">
+
+<div class="issue-summary">
+
+<div class="issue-summary-icon">
+<img src="./assets/Aperture.png">
+</div>
+
+<div>
+<div id="issue-count"><b>25 Issues</b></div>
+<p>Track and manage your project issues</p>
+</div>
+
+</div>
+
+<div class="legend-dots">
+<span><span class="dot-open"></span> Open</span>
+<span><span class="dot-closed"></span> Closed</span>
+</div>
+
+</div>
+
+<div id="issue-list" class="grid"></div>
+
+</div>
+</div>
+
+<!-- POPUP -->
+
+<div id="issue-popup" class="popup hide">
+
+<div class="popup-content">
+
+<div class="popup-top">
+<h2 id="modal-title"></h2>
+</div>
+
+<div class="modal-meta">
+<span id="modal-status" class="status-btn-modal"></span>
+<span id="modal-author-info"></span>
+</div>
+
+<div id="modal-tags" class="tag-container popup-tags"></div>
+
+<p id="modal-desc"></p>
+
+<div class="details-box">
+
+<div class="detail-item">
+<span class="detail-label">Assignee:</span>
+<b id="modal-assignee"></b>
+</div>
+
+<div class="detail-item">
+<span class="detail-label">Priority:</span>
+<span id="modal-priority" class="priority-pill"></span>
+</div>
+
+</div>
+
+<div class="popup-footer">
+<button id="close-popup-btn" class="close-btn">Close</button>
+</div>
+
+</div>
+</div>
+
+<script src="index.js"></script>
+
 </body>
 </html>
