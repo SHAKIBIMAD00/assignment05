@@ -38,7 +38,7 @@ year:"numeric"
 }).format(date);
 }
 
-for(let i=1;i<=25;i++){
+for(let i=1;i<=36;i++){
 
 issues.push({
 
