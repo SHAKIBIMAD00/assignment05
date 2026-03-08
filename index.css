@@ -3,7 +3,7 @@
 }
 
 body{
- font-family: "Geist", sans-serif;
+  font-family: "Geist", sans-serif;
   background:#f1f5f9;
   margin:0;
   color:#1f2937;
@@ -119,44 +119,44 @@ body{
   padding:30px;
 }
 
-
 /* FILTER TABS */
 
 .filter-tabs{
-display:flex;
-align-items:center;
-gap:10px;
-background:#ffffff;
-padding:26px;
-border-radius:14px;
-margin-bottom:25px;
-border:1px solid #e5e7eb;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#ffffff;
+  padding:26px;
+  border-radius:14px;
+  margin-bottom:25px;
+  border:1px solid #e5e7eb;
 }
 
 .tab-btn{
-min-width:120px;
-padding:12px 20px;
-border:1px solid #d1d5db;
-background:#ffffff;
-color:#64748b;
-border-radius:8px;
-font-size:14px;
-font-weight:600;
-cursor:pointer;
-transition:0.2s;
+  min-width:120px;
+  padding:12px 20px;
+  border:1px solid #d1d5db;
+  background:#ffffff;
+  color:#64748b;
+  border-radius:8px;
+  font-size:14px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.2s;
 }
 
 .tab-btn:hover{
-border-color:#6d28d9;
-color:#374151;
+  border-color:#6d28d9;
+  color:#374151;
 }
 
 .tab-btn.active{
-background:linear-gradient(90deg,#6d28d9,#4f46e5);
-color:white;
-border:none;
-box-shadow:0 6px 14px rgba(91,33,245,0.25);
+  background:linear-gradient(90deg,#6d28d9,#4f46e5);
+  color:white;
+  border:none;
+  box-shadow:0 6px 14px rgba(91,33,245,0.25);
 }
+
 /* STATUS SECTION */
 
 .status-legend{
